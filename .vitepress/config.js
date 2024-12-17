@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "POLAR DASHBOARD",
-  description: "Project information and service endpoint",
+  title: "GTIF CIF",
+  description: "Cerulean Information Factory Dashboard",
   appearance: false, // disable dark mode
   vue: {
     template: {
@@ -13,7 +13,7 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    logo: '/assets/Polar-TEP-Logo-White-300x135.png',
+    logo: '/assets/cerulean_logo.png',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Dashboard', link: '/uc1dashboard/' },

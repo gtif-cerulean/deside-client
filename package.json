@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@eodash/eodash": "^5.0.0-alpha.2.25",
-    "@eox/jsonform": "^0.8.2",
-    "@eox/stacinfo": "^0.3.3",
-    "@eox/storytelling": "^1.4.1",
+    "@eox/jsonform": "^0.11.0",
+    "@eox/stacinfo": "^0.6.0",
+    "@eox/storytelling": "^1.4.2",
     "vitepress": "^1.5.0",
     "vue": "^3.4.21"
   }
