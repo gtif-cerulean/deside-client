@@ -1,6 +1,6 @@
 const store = window.eodashStore;
 // choose if production catalog or PR deployment one
-let stacEndpoint = "https://gtif-cerulean.github.io/catalog/cerulean/catalog.json";
+let stacEndpoint = "https://gtif-cerulean.github.io/cerulean-catalog/cerulean/catalog.json";
 const searchParams = new URLSearchParams(window.location.search);
 if (searchParams.get('catalog')) {
   stacEndpoint = stacEndpoint.replace("catalog/",`catalog/pr-preview/${searchParams.get('catalog')}/`);
