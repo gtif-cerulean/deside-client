@@ -128,6 +128,22 @@ export default {
         },
       },
       {
+        defineWidget: (indicator) => {
+          return indicator
+            ? {
+                id: "process",
+                layout: { x: 9, y: 4, w: 3, h: 8 },
+                title: "Process",
+                type: "internal",
+                widget: {
+                  name: "EodashProcess",
+                },
+              }
+            : null;
+        },
+      },
+      /*
+      {
         defineWidget: (selectedCompareStac) => {
           return selectedCompareStac
             ? {
@@ -145,6 +161,7 @@ export default {
             : null;
         },
       },
+      */
       {
         defineWidget: (selected) => {
           return selected
