@@ -13,8 +13,8 @@ export default {
   async enhanceApp({ app, router, siteData }) {
     if (!import.meta.env.SSR) {
       await import('./style.css')
-      await import('../../.eodash/dist/eo-dash')
-      await import('../../.eodash/dist/style.css')
+      await import('@eodash/eodash/webcomponent')
+      await import('@eodash/eodash/webcomponent.css') 
       await import("@eox/storytelling")
       await import("@eox/stacinfo")
     }

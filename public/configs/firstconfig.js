@@ -1,6 +1,6 @@
 const store = window.eodashStore;
 // choose if production catalog or PR deployment one
-let stacEndpoint = "https://gtif-cerulean.github.io/cerulean-catalog/cerulean/catalog.json";
+let stacEndpoint = "https://santilland.github.io/process_example/catalog.json";
 const searchParams = new URLSearchParams(window.location.search);
 if (searchParams.get('catalog')) {
   stacEndpoint = stacEndpoint.replace("catalog/",`catalog/pr-preview/${searchParams.get('catalog')}/`);
@@ -42,7 +42,7 @@ export default {
       widget: {
         name: "EodashMap",
         properties: {
-          enableCompare: true,
+          // enableCompare: true,
         },
       },
     },
@@ -55,7 +55,7 @@ export default {
           name: "EodashItemFilter",
           properties: {
             filtersTitle: '',
-            enableCompare: true,
+            // enableCompare: true,
             filterProperties: [],
             aggregateResults: 'collection_group',
           },
@@ -67,7 +67,7 @@ export default {
             ? {
                 id: "Information",
                 title: "Information",
-                layout: { x: 9, y: 0, w: 3, h: 6 },
+                layout: { x: 9, y: 0, w: 3, h: 4 },
                 type: "web-component",
                 widget: {
                   link: "https://cdn.skypack.dev/@eox/stacinfo",
