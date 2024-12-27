@@ -67,7 +67,7 @@ export default {
             ? {
                 id: "Information",
                 title: "Information",
-                layout: { x: 9, y: 0, w: 3, h: 4 },
+                layout: { x: 9, y: 0, w: 3, h: 6 },
                 type: "web-component",
                 widget: {
                   link: "https://cdn.skypack.dev/@eox/stacinfo",
@@ -123,6 +123,7 @@ export default {
           name: "EodashLayerControl",
         },
       },
+      /*
       {
         defineWidget: (indicator) => {
           return indicator
@@ -138,6 +139,7 @@ export default {
             : null;
         },
       },
+      */
       /*
       {
         defineWidget: (selectedCompareStac) => {
