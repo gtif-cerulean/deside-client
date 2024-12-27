@@ -1,6 +1,6 @@
 const store = window.eodashStore;
 // choose if production catalog or PR deployment one
-let stacEndpoint = "https://santilland.github.io/process_example/catalog.json";
+let stacEndpoint = "https://gtif-cerulean.github.io/cerulean-catalog/cerulean/catalog.json";
 const searchParams = new URLSearchParams(window.location.search);
 if (searchParams.get('catalog')) {
   stacEndpoint = stacEndpoint.replace("catalog/",`catalog/pr-preview/${searchParams.get('catalog')}/`);
@@ -91,11 +91,7 @@ export default {
                       .footer-container button {margin-top: -10px;}
                       .footer-container small {font-size:10px;line-height:1;}`,
                     header: '["title"]',
-                    tags: '["themes"]',
-                    subheader: "[]",
-                    properties: '["satellite","sensor","agency","extent"]',
-                    featured: '["description","providers","assets","links"]',
-                    footer: '["sci:citation"]',
+                    body: "description",
                   },
                   tagName: "eox-stacinfo",
                 },
@@ -109,7 +105,7 @@ export default {
             ? {
                 id: "Datepicker",
                 type: "internal",
-                layout: { x: 5, y: 10, w: 1, h: 1 },
+                layout: { x: 5, y: 8, w: 2, h: 4 },
                 title: "Datepicker",
                 widget: {
                   name: "EodashDatePicker",
