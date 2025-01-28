@@ -10,12 +10,12 @@
     "eodash:preview": "eodash preview"
   },
   "dependencies": {
-    "@eodash/eodash": "5.0.0-rc",
-    "@eox/drawtools": "^0.13.1",
-    "@eox/chart": "^0.3.0",
-    "@eox/jsonform": "^0.11.0",
-    "@eox/stacinfo": "^0.6.0",
-    "@eox/storytelling": "^1.4.2",
+    "@eodash/eodash": "5.0.0-rc.2.1",
+    "@eox/chart": "^0.3.1",
+    "@eox/drawtools": "^0.13.3",
+    "@eox/jsonform": "0.12.2",
+    "@eox/stacinfo": "^0.6.1",
+    "@eox/storytelling": "^1.5.0",
     "mustache": "^4.2.0",
     "vitepress": "^1.5.0",
     "vue": "^3.4.21"
