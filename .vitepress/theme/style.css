@@ -45,6 +45,10 @@
  .eox-map-tooltip {
   display: block !important;
  }
+
+ eox-jsonform {
+  margin-bottom: -70px;
+ }
  :root {
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
