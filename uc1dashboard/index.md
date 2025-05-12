@@ -4,7 +4,6 @@ layout: page
 
 <script setup>
     import { withBase } from 'vitepress';
-
     if (typeof window !== 'undefined') {
         function injectStyleToShadowRoot(selector, css) {
             const interval = setInterval(() => {
@@ -18,7 +17,7 @@ layout: page
             }, 100);
         }
 
-        injectStyleToShadowRoot('my-component', `
+        injectStyleToShadowRoot('eox-chart', `
             input {
                 float: left !important;
                 padding: 0px !important;
