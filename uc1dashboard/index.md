@@ -4,33 +4,31 @@ layout: page
 
 <script setup>
     import { withBase } from 'vitepress';
-    function injectStyleToShadowRoot(selector, css) {
-    // Wait until the element is in the DOM
-    const interval = setInterval(() => {
-        const el = document.querySelector(selector);
-        if (el && el.shadowRoot) {
-        clearInterval(interval);
 
-        // Create a <style> element
-        const style = document.createElement('style');
-        style.textContent = css;
-
-        // Append it to the shadow root
-        el.shadowRoot.appendChild(style);
+    if (typeof window !== 'undefined') {
+        function injectStyleToShadowRoot(selector, css) {
+            const interval = setInterval(() => {
+            const el = document.querySelector(selector);
+            if (el && el.shadowRoot) {
+                clearInterval(interval);
+                const style = document.createElement('style');
+                style.textContent = css;
+                el.shadowRoot.appendChild(style);
+            }
+            }, 100);
         }
-    }, 100); // Check every 100ms
-    }
 
-    // Example usage:
-    injectStyleToShadowRoot('eox-chart', `
-    input {
-        float: left !important;
-        padding: 0px !important;
-        margin: 0px !important;
-        border: none;
+        injectStyleToShadowRoot('my-component', `
+            input {
+                float: left !important;
+                padding: 0px !important;
+                margin: 0px !important;
+                border: none;
+            }
+        `);
     }
-    `);
 </script>
+
 <style>
 eo-dash a[href="https://eox.at"] img{
    display: unset;
