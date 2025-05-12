@@ -8,8 +8,6 @@ onMounted(async () => {
   }
 });
 
-const data = useData();
-console.log(data)
 const {theme} = useData();
 </script>
 
@@ -55,29 +53,28 @@ const {theme} = useData();
 
           <!-- Info Menu -->
           <div id="info-frame">
-            <a class="frame-link" href="https://<WEB_PORTAL_URL>/services/documents-and-api/doc/?service_name=<SERVICE_NAME>">Docs</a>
-            <a class="frame-link" href="https://<WEB_PORTAL_URL>/services/documents-and-api/api/?service_name=<SERVICE_NAME>">API</a>
-            <a class="frame-link" href="https://<WEB_PORTAL_URL>/support/">Support</a>
+            <a class="frame-link" href="https://gtif-cerulean.github.io/deside-page/">About DESIDE</a>
+            <a class="frame-link" href="https://eodash.github.io/eodash/">eodash Documentation</a>
           </div>
 
         </div>
         <div id="user-container">
           <div id="login-div">
-            <a class="login-a not-logged" href="#">
-                <i data-feather="log-in" class="login-icon not-logged"></i>
-                <p class="login-text not-logged">Sign In</p>
+            <a class="login-a not-logged" href="https://workspace.deside.hub-otc.eox.at/">
+                <!-- <i data-feather="log-in" class="login-icon not-logged"></i> -->
+                <p class="login-text not-logged">Request User Workspace</p>
             </a>
-            <a class="login-a logged">
+            <!-- <a class="login-a logged">
                 <i data-feather="user" class="login-icon logged"></i>
                 <p class="login-text logged">[LOGGED_USER_NAME]</p>
-            </a>
+            </a> -->
           </div>
 
           <!-- User Menu -->
-          <div id="user-frame" class="logged">
+          <!-- <div id="user-frame" class="logged">
             <a class="frame-link" href="https://<IAM_URL>/realms/desp/account/">Account Settings</a>
             <a class="frame-link" href="#">Logout</a>
-          </div>
+          </div> -->
 
         </div>
 

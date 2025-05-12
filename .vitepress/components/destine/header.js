@@ -29,7 +29,7 @@ let menuIcon = document.getElementById('menu-icon');
 let dropdownIsVisible = false;
 
 /* TO DEVS: Boolean that has to be set on user login/logout -> see onUserAuthenticationChange() example code*/
-let userIsAuthenticated = true;
+let userIsAuthenticated = false;
 
 /* Listener to color current header menu link */
 window.addEventListener('DOMContentLoaded', () => {

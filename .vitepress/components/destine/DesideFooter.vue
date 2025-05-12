@@ -19,7 +19,7 @@ onMounted(async () => {
 
       <!-- Left Container -->
       <div id="footer-left-container">
-        <a href="https://<WEB_PORTAL_URL>">
+        <a href="https://destination-earth.eu/">
           <img id="footer-desp-logo" alt="desp-home" src="/assets/destine/desp_logo.svg">
         </a>
       </div>
@@ -54,10 +54,11 @@ onMounted(async () => {
 
     <!-- Footer menu -->
     <div id="footer-menu">
-      <a class="frame-link" href="http://<WEB_PORTAL_URL>/code-of-conduct/">Code of Conduct</a>
-      <a class="frame-link" href="http://<WEB_PORTAL_URL>/terms-and-conditions/">Terms and Conditions</a>
-      <a class="frame-link" href="http://<WEB_PORTAL_URL>/privacy-policies/">Privacy Policies</a>
-      <a class="frame-link" href="http://<WEB_PORTAL_URL>/legal-notice/">Legal Notice</a>
+      <a class="frame-link" href="https://platform.destine.eu/code-of-conduct/">Code of Conduct</a>
+      <a class="frame-link" href="https://platform.destine.eu/terms-and-conditions/">Terms and Conditions</a>
+      <a class="frame-link" href="https://platform.destine.eu/privacy-policies/">Privacy Policies</a>
+      <a class="frame-link" href="https://platform.destine.eu/cookie-policy/">Cookie Policy</a>
+      <a class="frame-link" href="https://platform.destine.eu/legal-notice/">Legal Notice</a>
       <div class="mobile-link">
         <hr>
         <a class="footer-frame-link" href="https://destination-earth.eu">

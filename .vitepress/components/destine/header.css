@@ -105,7 +105,9 @@ html, body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: flex-start;
+  gap: var(--header-padding);
   flex-grow: 1;
   margin: 0;
   padding: 0 calc(var(--header-padding) * 2);
