@@ -3,11 +3,10 @@
 layout: home
 
 hero:
-  name: "DESIDE Dashboard - BETA"
+  name: "DESIDE"
   text: ""
   heroImage: /assets/deside_logo.png
-  tagline: "Demonstrator dashboard"
+  tagline: "Empowering Decisions with Dynamic Insights on Polar and Baltic Sea Ice Conditions"
 ---
 
-Dashboard integration demonstrator for capabilities being developed in the DESIDE activity.
-Be advised this is a BETA deployment for testing, often and breaking changes are to be expected.
+The DESIDE project is utilizing the DESP/DestinE system capabilities and adding value to meet the needs of policy and decision makers who require information on the past, current, and forecasted sea ice and other relevant conditions for operational purposes in the Baltic Sea, European Arctic Ocean, and the rest of the polar regions.

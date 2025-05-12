@@ -4,8 +4,8 @@ import "feather-icons";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "DESIDE - BETA",
-  description: "DESIDE Examples Dashboard",
+  title: "DESIDE",
+  description: "DESIDE",
   appearance: false, // disable dark mode
   vite: {
     resolve: {
@@ -33,7 +33,7 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    logo: '/assets/deside_logo.png',
+    logo: '/assets/deside_logo.svg',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Dashboard', link: '/uc1dashboard/' },
