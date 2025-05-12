@@ -16,6 +16,7 @@
     "@eox/jsonform": "0.12.2",
     "@eox/stacinfo": "^0.6.1",
     "@eox/storytelling": "^1.5.0",
+    "feather-icons": "^4.29.2",
     "mustache": "^4.2.0",
     "vitepress": "^1.5.0",
     "vue": "^3.4.21"
