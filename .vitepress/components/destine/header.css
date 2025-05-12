@@ -39,7 +39,7 @@ html, body {
 /* DESP Font */
 @font-face {
   font-family: "Roboto-Bold";
-  src: local("Roboto-Bold"), url(../../public/assets/destine/Roboto/Roboto-Bold.ttf) format("truetype");
+  src: local("Roboto-Bold"), url(/assets/destine/Roboto/Roboto-Bold.ttf) format("truetype");
 }
 
 /* Header Container */
