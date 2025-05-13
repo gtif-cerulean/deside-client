@@ -38,6 +38,10 @@ eo-dash .eodash-overlay p {
    left: 70px !important;
 }
 
+eo-dash #ButtonsPanel {
+    max-height: 50px;
+}
+
 eox-chart input {
       width: 100% !important;
   height: 100% !important;
