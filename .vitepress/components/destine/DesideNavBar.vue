@@ -53,8 +53,8 @@ const {theme} = useData();
 
           <!-- Info Menu -->
           <div id="info-frame">
-            <a class="frame-link" href="https://gtif-cerulean.github.io/deside-page/">About DESIDE</a>
-            <a class="frame-link" href="https://eodash.github.io/eodash/">eodash Documentation</a>
+            <a class="frame-link" href="https://destination-earth.eu/use-cases/deside/" target="_blank">About DESIDE</a>
+            <a class="frame-link" href="https://eodash.github.io/eodash/" target="_blank">eodash Documentation</a>
           </div>
 
         </div>
