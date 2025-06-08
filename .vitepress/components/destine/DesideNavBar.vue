@@ -25,7 +25,7 @@ const {theme} = useData();
 
       <!-- Left container -->
       <div id="left-container">
-        <a href="https://<WEB_PORTAL_URL>">
+        <a href="https://platform.destine.eu/">
           <img id="eu-flag-de" alt="destine platform home" src="/assets/destine/destination_earth_logo.svg">
         </a>
         <a href="#">
@@ -62,7 +62,7 @@ const {theme} = useData();
           <div id="login-div">
             <a class="login-a not-logged" href="https://workspace.deside.hub-otc.eox.at/">
                 <!-- <i data-feather="log-in" class="login-icon not-logged"></i> -->
-                <p class="login-text not-logged">Request User Workspace</p>
+                <p class="login-text not-logged">Workspace Login</p>
             </a>
             <!-- <a class="login-a logged">
                 <i data-feather="user" class="login-icon logged"></i>
