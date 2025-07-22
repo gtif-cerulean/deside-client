@@ -42,31 +42,8 @@
  * - `danger`: Used to show error, or dangerous message to the users. Used
  *   in custom container, badges, etc.
  * -------------------------------------------------------------------------- */
- .eox-map-tooltip {
-  display: block !important;
- }
 
- eox-jsonform {
-  margin-bottom: -10px;
- }
 
-eox-jsonform {
-  min-height: 60px !important;
-}
-
- /* fix for eodash overlay being in footer*/
- .eodash-overlay {
-  top: -64px !important;
- }
-
- /* fix for broken input fields in vega chart */
-form input {
-  width: 100% !important;
-  height: 100% !important;
-  padding: 0px !important;
-  margin: 0px !important;
-
- }
  :root {
   --v-theme-on-secondary: #fff;
 

@@ -4,51 +4,63 @@ layout: page
 
 <script setup>
     import { withBase } from 'vitepress';
-    if (typeof window !== 'undefined') {
-        function injectStyleToShadowRoot(selector, css) {
-            const interval = setInterval(() => {
-            const el = document.querySelector(selector);
-            if (el && el.shadowRoot) {
-                clearInterval(interval);
-                const style = document.createElement('style');
-                style.textContent = css;
-                el.shadowRoot.appendChild(style);
+    import { onMounted } from "vue"
+    import eodashStyle from "@eodash/eodash/webcomponent.css?raw";
+    onMounted(() => {
+        const EodashContainer = class extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({ mode: "open" });
             }
-            }, 100);
-        }
 
-        injectStyleToShadowRoot('eox-chart', `
-            input {
-                float: left !important;
-                padding: 0px !important;
-                margin: 0px !important;
-                border: none;
+            connectedCallback() {
+                const style = document.createElement("style");
+                style.innerHTML = `
+                    ${eodashStyle}
+                    /* Why is this needed? Somehow these CSS vars get "lost" */
+                    .bg-primary {
+                        --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+                        background-color: rgb(var(--v-theme-primary)) !important;
+                        color: rgb(var(--v-theme-on-primary)) !important;
+                    }
+                    .bg-secondary {
+                        --v-theme-overlay-multiplier: var(--v-theme-secondary-overlay-multiplier);
+                        background-color: rgb(var(--v-theme-secondary)) !important;
+                        color: rgb(var(--v-theme-on-secondary)) !important;
+                    }
+                    :root {
+                        --v-hover-opacity: 0.04 !important;
+                        --v-focus-opacity: 0.12 !important;
+                    }
+                    .v-btn:hover>.v-btn__overlay {
+                        opacity: var(--v-hover-opacity);
+                    }
+                    .v-btn:focus-visible>.v-btn__overlay {
+                        opacity: var(--v-focus-opacity);
+                    }
+                `;
+                this.shadowRoot.appendChild(style);
+
+                const eoDash = document.createElement("eo-dash");
+                eoDash.style = "display: block; height: 100%; width: 100%;";
+                eoDash.config = withBase('/configs/firstconfig.js');
+                this.shadowRoot.appendChild(eoDash);
             }
-        `);
-    }
+        };
+        if (!customElements.get("eodash-container")) {
+            customElements.define("eodash-container", EodashContainer);
+        }  
+        // monkeypatching querySelector to get to the EOXMap inside shadowDom for drawtools to attach itself
+        document.querySelector = (function(originalQuerySelector) {
+        return function(selector) {
+            if (selector === 'eox-map#main') {
+                return document.querySelector("eodash-container").shadowRoot.querySelector("eox-map#main");
+            }
+            return originalQuerySelector.call(document, selector);
+        };
+        })(document.querySelector);
+    });
+
 </script>
 
-<style>
-eo-dash a[href="https://eox.at"] img{
-   display: unset;
-   height: 9px;
-}
-eo-dash .eodash-overlay p {
-   bottom: -18px !important;
-   left: 70px !important;
-}
-
-eo-dash #ButtonsPanel {
-    max-height: 50px;
-}
-
-eox-chart input {
-      width: 100% !important;
-  height: 100% !important;
-  padding: 0px !important;
-  margin: 0px !important;
-
-}
-</style>
-
-<eo-dash style="height:calc(100dvh - 126px); display: flex; width: 100%" :config="withBase('/configs/firstconfig.js')"/>
+<eodash-container style="display: block; height: calc(100dvh - var(--vp-nav-height))"></eodash-container>
