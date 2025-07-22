@@ -1,14 +1,6 @@
-const store = window.eodashStore;
-// choose if production catalog or PR deployment one
-let stacEndpoint = "https://gtif-cerulean.github.io/deside-catalog/deside/catalog.json";
-const searchParams = new URLSearchParams(window.location.search);
-if (searchParams.get('catalog')) {
-  stacEndpoint = stacEndpoint.replace("catalog/",`catalog/pr-preview/${searchParams.get('catalog')}/`);
-}
-
 export default {
   id: "demo",
-  stacEndpoint: stacEndpoint,
+  stacEndpoint: "https://gtif-cerulean.github.io/deside-catalog/deside/catalog.json",
   brand: {
     noLayout: true,
     name: "DESIDE Dashboard",
@@ -78,7 +70,7 @@ export default {
               ? {
                   id: "Information",
                   title: "Information",
-                  layout: { x: 9, y: 0, w: 3, h: 4 },
+                  layout: { x: "9/9/10", y: 0, w: "3/3/2", h: 4 },
                   type: "internal",
                   widget: {
                     name: "EodashStacInfo",
@@ -109,7 +101,7 @@ export default {
               ? {
                   id: "Datepicker",
                   type: "internal",
-                  layout: { x: 5, y: 11, w: 2, h: 1 },
+                  layout: { x: 4, y: 6, w: 4, h: 6 },
                   title: "Datepicker",
                   widget: {
                     name: "EodashDatePicker",
@@ -128,7 +120,7 @@ export default {
             return selected
               ? {
                   id: "ButtonsPanel",
-                  layout: { x: 8, y: 0, w: 1, h: 1 },
+                  layout: { x: "8/8/9", y: 0, w: 1, h: 3 },
                   title: "Buttons",
                   type: "internal",
                   widget: {
@@ -144,7 +136,7 @@ export default {
               id: Symbol(),
               type: "internal",
               title: "Layer Control",
-              layout: { x: 0, y: 1, w: 3, h: 8 },
+              layout: { x: 0, y: 1, w: "3/3/2", h: 11 },
               widget: {
                 name: "EodashLayerControl",
               }
@@ -153,12 +145,12 @@ export default {
         },
         {
           defineWidget: (selectedSTAC) =>
-            selectedSTAC?.links.some((l) => l.rel === "service")
+            window.eodashStore.actions.includesProcess(selectedSTAC)
               ? {
                   id: "Processes",
                   type: "internal",
                   title: "Processes",
-                  layout: { x: 9, y: 4, w: 3, h: 8 },
+                  layout: { x: "9/9/10", y: 6, w: "3/3/2", h: 6 },
                   widget: {
                     name: "EodashProcess",
                   },
@@ -236,7 +228,7 @@ export default {
           id: Symbol(),
           type: "internal",
           title: "Layers",
-          layout: { x: 0, y: 2, w: 3, h: 6 },
+          layout: { x: 0, y: 1, w: "3/3/2", h: 11 },
           widget: {
             name: "EodashLayerControl",
           },
@@ -244,7 +236,7 @@ export default {
         {
           id: Symbol(),
           title: "Comparison Layers",
-          layout: { x: 9, y: 1, w: 3, h: 6 },
+          layout: { x: "9/9/10", y: 1, w: "3/3/2", h: 11 },
           type: "internal",
           widget: {
             name: "EodashLayerControl",
@@ -253,28 +245,12 @@ export default {
             },
           },
         },
-        /*
-        {
-          defineWidget: (selectedSTAC) =>
-            selectedSTAC?.links.some((l) => l.rel === "service")
-              ? {
-                  id: Symbol(),
-                  type: "internal",
-                  title: "Processes",
-                  layout: { x: 0, y: 7, w: 3, h: 5 },
-                  widget: {
-                    name: "EodashProcess",
-                  },
-                }
-              : null,
-        },
-        */
         {
           defineWidget: (selected) => {
             return selected
               ? {
                   id: "Buttons",
-                  layout: { x: 8, y: 0, w: 1, h: 2 },
+                  layout: { x: "8/8/9", y: 0, w: 1, h: 3 },
                   title: "Buttons",
                   type: "internal",
                   widget: {
@@ -293,7 +269,7 @@ export default {
               ? {
                   id: "Datepicker",
                   type: "internal",
-                  layout: { x: 5, y: 11, w: 2, h: 1 },
+                  layout: { x: 4, y: 7, w: 4, h: 5 },
                   title: "Date",
                   widget: {
                     name: "EodashDatePicker",

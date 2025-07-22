@@ -63,4 +63,4 @@ layout: page
 
 </script>
 
-<eodash-container style="display: block; height: calc(100dvh - var(--vp-nav-height))"></eodash-container>
+<eodash-container style="display: block; height: calc(100dvh - var(--vp-nav-height) - 64px)"></eodash-container>
