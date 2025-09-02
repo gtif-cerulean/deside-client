@@ -7,7 +7,7 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "@eodash/eodash": "https://pkg.pr.new/eodash/eodash/@eodash/eodash@825a517",
+    "@eodash/eodash": "https://pkg.pr.new/eodash/eodash/@eodash/eodash@52a7542",
     "feather-icons": "^4.29.2",
     "mustache": "^4.2.0",
     "vitepress": "^1.5.0",
