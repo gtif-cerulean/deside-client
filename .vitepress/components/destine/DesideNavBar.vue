@@ -53,7 +53,7 @@ const {theme} = useData();
 
           <!-- Info Menu -->
           <div id="info-frame">
-            <a class="frame-link" href="https://deside.polarview.org/" target="_blank">About DESIDE</a>
+            <!-- <a class="frame-link" href="https://deside.polarview.org/" target="_blank">About DESIDE</a> -->
             <a class="frame-link" href="https://eodash.github.io/eodash/" target="_blank">eodash Documentation</a>
           </div>
 
