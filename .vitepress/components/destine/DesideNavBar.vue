@@ -58,25 +58,6 @@ const {theme} = useData();
           </div>
 
         </div>
-        <div id="user-container">
-          <div id="login-div">
-            <a class="login-a not-logged" href="https://workspace.deside.hub-otc.eox.at/">
-                <!-- <i data-feather="log-in" class="login-icon not-logged"></i> -->
-                <p class="login-text not-logged">Workspace Login</p>
-            </a>
-            <!-- <a class="login-a logged">
-                <i data-feather="user" class="login-icon logged"></i>
-                <p class="login-text logged">[LOGGED_USER_NAME]</p>
-            </a> -->
-          </div>
-
-          <!-- User Menu -->
-          <!-- <div id="user-frame" class="logged">
-            <a class="frame-link" href="https://<IAM_URL>/realms/desp/account/">Account Settings</a>
-            <a class="frame-link" href="#">Logout</a>
-          </div> -->
-
-        </div>
 
         <!-- Mobile menu icon -->
         <div id="menu-icon-container">
