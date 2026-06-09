@@ -94,12 +94,13 @@
  * Component: Home
  * -------------------------------------------------------------------------- */
 
-
+body {
+  --primary: #ef2b89!important;
+}
 :root {
   --primary-color: #ef2b89;
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: #ef2b89;
-  
 }
 .VPContent {
   background-color: #0c1426 !important;
@@ -135,7 +136,6 @@
 :root, .VPNav {
   --vp-nav-bg-color: var(--vp-c-esa-blue);
   --vp-nav-logo-height: 50px;
-  
   background: var(--vp-c-esa-blue);
 }
 .VPNav{

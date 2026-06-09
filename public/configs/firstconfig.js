@@ -31,27 +31,61 @@ export default {
         },
       },
       background: {
-        id: Symbol(),
+        id: "EodashMap",
         type: "internal",
         widget: {
           name: "EodashMap",
           properties: {
             enableCompare: true,
             zoomToExtent: false,
+            btns: {
+              enableExportMap: true,
+              enableCompareIndicators: {
+                itemFilterConfig: {
+                  resultType: "list",
+                  enableHighlighting: false,
+                  filterProperties: [
+                    {
+                      keys: ["title", "themes"],
+                      title: "Search",
+                      type: "text",
+                      expanded : true
+                    },
+                    {
+                      key: "themes",
+                      title: "Theme Filter",
+                      type: "select",
+                      expanded : true
+                    },
+                  ],
+                  subTitleProperty: "subtitle",
+                  aggregateResults: "collection_group",
+                  style: {
+                    "--form-flex-direction": "row",
+                  },
+                },
+              },
+              enableSearch: false,
+              enableGlobe: false,
+            },
+            btnsPosition: {
+              x: "12/9/10",
+              y: 1,
+              gap: 32
+            },
           },
         },
       },
       widgets: [
         {
-          id: Symbol(),
+          id: "Tools",
           type: "internal",
           title: "Tools",
-          layout: { x: 0, y: 0, w: 3, h: 1 },
+          layout: { x: 0, y: 0, w: 2, h: 2 },
           widget: {
             name: "EodashTools",
             properties: {
-              // layoutTarget: "light",
-              // layoutIcon: "M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z",
+              showLayoutSwitcher: false,
               itemFilterConfig: {
                 // resultType: "cards",
                 subTitleProperty: "subtitle",
@@ -116,24 +150,9 @@ export default {
           },
         },
         {
-          defineWidget: (selected) => {
-            return selected
-              ? {
-                  id: "ButtonsPanel",
-                  layout: { x: "8/8/9", y: 0, w: 1, h: 3 },
-                  title: "Buttons",
-                  type: "internal",
-                  widget: {
-                    name: "EodashMapBtns",
-                  },
-                }
-              : null;
-          },
-        },
-        {
           defineWidget: (selectedSTAC) => {
             return selectedSTAC ? {
-              id: Symbol(),
+              id: "LayerControl",
               type: "internal",
               title: "Layer Control",
               layout: { x: 0, y: 1, w: "3/3/2", h: 10 },
@@ -157,6 +176,18 @@ export default {
                 }
               : null,
         },
+        {
+          defineWidget: () =>
+            window.eodashStore.actions.shouldShowChartWidget() && {
+              id: "ProcessResultChart",
+              type: "internal",
+              title: "Chart",
+              layout: { x: 0, y: 0, w: 12, h: 8 },
+              widget: {
+                name: "EodashChart",
+              },
+            },
+        },
       ],
     },
     compare: {
@@ -177,46 +208,84 @@ export default {
         },
       },
       background: {
-        id: Symbol(),
+        id: "EodashMapCompare",
         type: "internal",
         widget: {
           name: "EodashMap",
           properties: {
             enableCompare: true,
             zoomToExtent: false,
+            btns: {
+              enableZoom: true,
+              enableExportMap: false,
+              enableChangeProjection: false,
+              enableCompareIndicators: {
+                fallbackTemplate: "light",
+              },
+              enableBackToPOIs: false,
+              enableSearch: false,
+              enableGlobe: false,
+            },
+            btnsPosition: {
+              x: "12/9/10",
+              y: 1,
+              gap: 32
+            }
           },
         },
       },
       widgets: [
         {
-          id: Symbol(),
+          id: "Tools",
           type: "internal",
-          layout: { x: 0, y: 0, w: 3, h: 4 },
+          layout: { x: 0, y: 0, w: 2, h: 2 },
           widget: {
-            name: "EodashItemFilter",
+            name: "EodashTools",
             properties: {
-              filtersTitle: '',
-              filterProperties: [],
-              aggregateResults: 'collection_group',
+              showLayoutSwitcher: false,
+              itemFilterConfig: {
+                // resultType: "cards",
+                enableHighlighting: false,
+                subTitleProperty: "subtitle",
+                aggregateResults: "collection_group",
+                style: {
+                  "--form-flex-direction": "row",
+                },
+              },
             },
           },
         },
         // compare indicators
         {
-          id: Symbol(),
+          id: "CompareTools",
           type: "internal",
           title: "Tools",
-          layout: { x: 9, y: 0, w: 3, h: 1 },
+          layout: { x: 9, y: 0, w: 3, h: 2 },
           widget: {
             name: "EodashTools",
             properties: {
               showLayoutSwitcher: false,
-              indicatorBtnText: "Select an indicator to compare",
+              indicatorBtnText: "Select indicator to compare",
               itemFilterConfig: {
                 enableCompare: true,
-                // resultsTitle:"Select an indicator to compare",
-                filtersTitle: "Select an indicator to compare",
-                // filterProperties: [],
+                resultType: "list",
+                filtersTitle: "Select indicator to compare",
+                filterProperties: [
+                  {
+                    keys: ["title", "themes"],
+                    title: "Search",
+                    type: "text",
+                    expanded : true
+                  },
+                  {
+                    key: "themes",
+                    title: "Theme Filter",
+                    type: "select",
+                    expanded : true
+                  },
+                ],
+                aggregateResults: "collection_group",
+                enableHighlighting: false,
                 cssVars: {
                   "--form-flex-direction": "row",
                 },
@@ -225,42 +294,34 @@ export default {
           },
         },
         {
-          id: Symbol(),
+          id: "Layers",
           type: "internal",
           title: "Layers",
           layout: { x: 0, y: 1, w: "3/3/2", h: 10 },
           widget: {
             name: "EodashLayerControl",
+            properties: {
+              cssVars: {
+                "--list-padding": "1rem"
+              },
+            },
           },
         },
         {
-          id: Symbol(),
+          id: "ComparisonLayers",
           title: "Comparison Layers",
-          layout: { x: "9/9/10", y: 1, w: "3/3/2", h: 10 },
+          layout: { x: "9/9/10", y: 1, w: "3/3/2", h: 11 },
           type: "internal",
           widget: {
             name: "EodashLayerControl",
             properties: {
               map: "second",
+              properties: {
+                cssVars: {
+                  "--list-padding": "1rem"
+                },
+              },
             },
-          },
-        },
-        {
-          defineWidget: (selected) => {
-            return selected
-              ? {
-                  id: "Buttons",
-                  layout: { x: "8/8/9", y: 0, w: 1, h: 3 },
-                  title: "Buttons",
-                  type: "internal",
-                  widget: {
-                    name: "EodashMapBtns",
-                    properties: {
-                      compareIndicators: false,
-                    },
-                  },
-                }
-              : null;
           },
         },
         {
@@ -269,7 +330,7 @@ export default {
               ? {
                   id: "Datepicker",
                   type: "internal",
-                  layout: { x: 4, y: 7, w: 4, h: 5 },
+                  layout: { x: 4, y: 2, w: 4, h: 9 },
                   title: "Date",
                   widget: {
                     name: "EodashDatePicker",
@@ -282,6 +343,60 @@ export default {
                 }
               : null;
           },
+        },
+        {
+          defineWidget: (selectedSTAC) =>
+            window.eodashStore.actions.includesProcess(selectedSTAC) && {
+              id: "Process",
+              type: "internal",
+              title: "Processes",
+              layout: { x: 0, y: 6, w: "3/3/2", h: 5 },
+              widget: {
+                name: "EodashProcess",
+              },
+            },
+        },
+        {
+          defineWidget: (_, updatedCompareStac) =>
+            window.eodashStore.actions.includesProcess(updatedCompareStac, true) && {
+              id: "CompareMapProcess",
+              type: "internal",
+              title: "Processes",
+              layout: { x: 9, y: 6, w: "3/3/2", h: 5 },
+              widget: {
+                name: "EodashProcess",
+                properties: {
+                  enableCompare: true,
+                },
+              },
+            },
+        },
+        {
+          defineWidget: () =>
+            window.eodashStore.actions.shouldShowChartWidget() && {
+              id: "ProcessResultChart",
+              type: "internal",
+              title: "Chart",
+              layout: { x: 0, y: 0, w: 6, h: 8 },
+              widget: {
+                name: "EodashChart",
+              },
+            },
+        },
+        {
+          defineWidget: () =>
+            window.eodashStore.actions.shouldShowChartWidget(true) && {
+              id: "ProcessResultChartCompare",
+              type: "internal",
+              title: "Compare Chart",
+              layout: { x: 6, y: 0, w: 6, h: 8 },
+              widget: {
+                name: "EodashChart",
+                properties: {
+                  enableCompare: true,
+                },
+              },
+            },
         },
       ],
     },
