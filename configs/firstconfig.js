@@ -104,7 +104,7 @@ export default {
               ? {
                   id: "Information",
                   title: "Information",
-                  layout: { x: "9/9/10", y: 0, w: "3/3/2", h: 4 },
+                  layout: { x: "9/9/10", y: 0, w: "3/3/2", h: 6 },
                   type: "internal",
                   widget: {
                     name: "EodashStacInfo",
