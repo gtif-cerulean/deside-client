@@ -115,14 +115,19 @@ export default {
                         "description",
                         "providers",
                         "assets",
-                        "sci:doi"
+                        "sci:doi",
+                        "sci:citation",
+                        "sci:publication",
                       ],
                       body: [
                         "satellite",
                         "sensor",
+                        "otherSources",
+                        "insituSources",
                         "agency",
-                        "extent"
-                      ]
+                        "extent",
+                      ],
+                      footer: [],
                     },
                   },
                 }
