@@ -1,6 +1,12 @@
 export default {
   id: "demo",
-  stacEndpoint: "https://gtif-cerulean.github.io/deside-catalog/deside/catalog.json",
+  stacEndpoint: {
+    endpoint: "https://gtif-cerulean.github.io/deside-catalog/deside/catalog.json",
+    supportedUpscalingEndpoints: [
+      { url: "eoapi.workspace.cif.hub-otc.eox.at", titilerVersion: 2 },
+      { url: "eoapi.workspace.polartep-iceview.hub-otc-sc.eox.at", titilerVersion: 2 },
+    ],
+  },
   brand: {
     noLayout: true,
     name: "DESIDE Dashboard",
