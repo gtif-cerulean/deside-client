@@ -3,8 +3,8 @@ export default {
   stacEndpoint: {
     endpoint: "https://gtif-cerulean.github.io/deside-catalog/deside/catalog.json",
     supportedUpscalingEndpoints: [
-      { url: "eoapi.workspace.cif.hub-otc.eox.at", titilerVersion: 2 },
-      { url: "eoapi.workspace.polartep-iceview.hub-otc-sc.eox.at", titilerVersion: 2 },
+      { url: "eoapi.workspace.cif.hub-otc.eox.at", titilerVersion: 2, scaleFactor: 3},
+      { url: "eoapi.workspace.polartep-iceview.hub-otc-sc.eox.at", titilerVersion: 2, scaleFactor: 2},
     ],
   },
   brand: {
