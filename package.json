@@ -9,6 +9,7 @@
   "dependencies": {
     "@eodash/eodash": "https://pkg.pr.new/@eodash/eodash@06280d1",
     "@eox/map": "https://pkg.pr.new/EOX-A/EOxElements/@eox/map@6706c85",
+    "@eox/jsonform": "https://pkg.pr.new/EOX-A/EOxElements/@eox/jsonform@cab87f6",
     "feather-icons": "^4.29.2",
     "mustache": "^4.2.0",
     "vitepress": "^1.5.0",
