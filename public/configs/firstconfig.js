@@ -7,7 +7,7 @@ export default {
       { url: "eoapi.workspace.polartep-iceview.hub-otc-sc.eox.at", titilerVersion: 2, scaleFactor: 2},
     ],
     colormapRegistry: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/main/defaults/colormaps.json",
-    tileMatrixSetRegistry: "https://eoapi.workspace.cif.hub-otc.eox.at/raster/tileMatrixSets?f=json",
+    tileMatrixSetRegistry: "https://raw.githubusercontent.com/eurodatacube/eodash-assets/refs/heads/main/defaults/tmsRegistry.json",
   },
   brand: {
     noLayout: true,
