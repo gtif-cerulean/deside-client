@@ -7,9 +7,9 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "@eodash/eodash": "https://pkg.pr.new/@eodash/eodash@7b2720c",
-    "@eox/map": "https://pkg.pr.new/EOX-A/EOxElements/@eox/map@e6bb775",
-    "@eox/jsonform": "https://pkg.pr.new/EOX-A/EOxElements/@eox/jsonform@cab87f6",
+    "@eodash/eodash": "https://pkg.pr.new/@eodash/eodash@aef6283",
+    "@eox/map": "https://pkg.pr.new/EOX-A/EOxElements/@eox/map@c26fdb4",
+    "@eox/jsonform": "^1.12.2",
     "feather-icons": "^4.29.2",
     "mustache": "^4.2.0",
     "vitepress": "^1.5.0",
