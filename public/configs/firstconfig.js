@@ -74,7 +74,7 @@ export default {
                 },
               },
               enableSearch: false,
-              enableGlobe: false,
+              enableGlobe: true,
             },
             btnsPosition: {
               x: "12/9/10",
