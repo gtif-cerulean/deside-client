@@ -7,9 +7,7 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "@eodash/eodash": "https://pkg.pr.new/@eodash/eodash@921d8fc",
-    "@eox/map": "https://pkg.pr.new/EOX-A/EOxElements/@eox/map@c26fdb4",
-    "@eox/jsonform": "https://pkg.pr.new/EOX-A/EOxElements/@eox/jsonform@94aa7ef",
+    "@eodash/eodash": "https://pkg.pr.new/@eodash/eodash@19648e0",
     "feather-icons": "^4.29.2",
     "mustache": "^4.2.0",
     "vitepress": "^1.5.0",
