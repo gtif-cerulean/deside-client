@@ -1,0 +1,1 @@
+import{a3 as t,ab as a,ap as e,ak as s}from"./framework.Clme5EQu.js";function r(){const o=s(!1);return t(()=>{window.requestAnimationFrame(()=>{o.value=!0})}),{ssrBootStyles:e(()=>o.value?void 0:{transition:"none !important"}),isBooted:a(o)}}export{r as u};
