@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from 'vue';
 import { useData } from 'vitepress';
+import { withBase } from 'vitepress';
 
 onMounted(async () => {
   if (!import.meta.env.SSR) {
@@ -38,7 +39,7 @@ const {theme} = useData();
         <a
           v-for="nav in theme.nav"
           class="header-link"
-          :href="nav.link"
+          :href="withBase(nav.link)"
         >
           {{ nav.text }}
         </a>
@@ -73,7 +74,7 @@ const {theme} = useData();
       v-for="nav in theme.nav"
       class="dropdown-link"
     >
-      <a :href="nav.link">{{ nav.text }}</a>
+      <a :href="withBase(nav.link)">{{ nav.text }}</a>
     </div>
   </div>
 </template>
