@@ -7,10 +7,13 @@
     "docs:preview": "vitepress preview"
   },
   "dependencies": {
-    "@eodash/eodash": "https://pkg.pr.new/@eodash/eodash@19648e0",
+    "@eodash/eodash": "5.10.0",
     "feather-icons": "^4.29.2",
     "mustache": "^4.2.0",
     "vitepress": "^1.5.0",
     "vue": "^3.4.21"
+  },
+  "overrides": {
+    "@eodash/stac": "^0.2.0"
   }
 }
