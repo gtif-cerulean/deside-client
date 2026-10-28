@@ -1,7 +1,13 @@
+// in production build changed to main catalog, defaults to staging
+const defaultEndpoint = "https://gtif-cerulean.github.io/deside-catalog/staging/deside/catalog.json";
+const endpoint = (typeof window !== "undefined" && window.__DESIDE_VITE_STAC_ENDPOINT__)
+  ? window.__DESIDE_VITE_STAC_ENDPOINT__
+  : defaultEndpoint;
+
 export default {
   id: "demo",
   stacEndpoint: {
-    endpoint: "https://gtif-cerulean.github.io/deside-catalog/deside/catalog.json",
+    endpoint: endpoint,
     supportedUpscalingEndpoints: [
       { url: "eoapi.workspace.cif.hub-otc.eox.at", titilerVersion: 2, scaleFactor: 3},
       { url: "eoapi.workspace.polartep-iceview.hub-otc-sc.eox.at", titilerVersion: 2, scaleFactor: 2},
