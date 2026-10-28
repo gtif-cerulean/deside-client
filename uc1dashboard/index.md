@@ -13,7 +13,6 @@ layout: false
   eo-dash {
     display:block;
     position: relative;
-    /* top: var(--vp-nav-height);  to be added with upgrade above 5.3.0*/ 
     height: calc(100dvh - var(--vp-nav-height)) !important;
   }
   @media (max-width: 960px) {
