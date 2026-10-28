@@ -28,7 +28,4 @@ jobs:
           folder: .vitepress/dist/
           branch: gh-pages
           target-folder: staging
-          clean-exclude: |
-            pr-preview
-            main
           force: false
