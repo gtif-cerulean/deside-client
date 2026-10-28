@@ -2,11 +2,20 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vitepress'
 import "feather-icons";
 
+const stacEndpoint = process.env.VITE_STAC_ENDPOINT || "https://gtif-cerulean.github.io/deside-catalog/staging/deside/catalog.json"; // staging as default
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "DESIDE",
   description: "DESIDE",
   appearance: false, // disable dark mode
+  head: [
+    [ // used in firstconfig.js
+      'script',
+      {},
+      `window.__DESIDE_VITE_STAC_ENDPOINT__ = ${JSON.stringify(stacEndpoint)};`
+    ]
+  ],
   vite: {
     resolve: {
       alias: [
